@@ -1,37 +1,3 @@
-# misinfomation
-
-Here is the **entire README.md** in **one single block** — ready for you to copy & paste directly into GitHub.
-
-It includes:
-
-### ✔ professional formatting
-
-### ✔ full academic description
-
-### ✔ formulas
-
-### ✔ project structure
-
-### ✔ installation
-
-### ✔ how to run
-
-### ✔ results summary
-
-### ✔ references
-
-### ✔ your name
-
-Just **copy the entire block below** into your `README.md`.
-
----
-
-# ✅ **FULL README.md (copy everything below)**
-
-```markdown
-# Modeling the Spread of Misinformation in Online Networks  
-### Final Project — Simulation, Analysis, and Tipping-Point Detection
-
 This repository contains a complete simulation pipeline for modeling the
 spread of misinformation across synthetic social networks. The project
 implements agent-based diffusion models, tipping-point estimation using a
@@ -293,17 +259,4 @@ MIT License
 
 ```
 
----
-
-# 🎉 You're done!
-You can paste this directly into GitHub — it is a complete, polished README.md that matches your entire project.
-
-If you want, I can also:
-
-### ✔ generate the full ZIP file  
-### ✔ add shields.io badges  
-### ✔ generate a `main.py` script  
-### ✔ generate plots for your repo  
-
-Just tell me **what you want next**.
-```
+-
