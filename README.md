@@ -1,9 +1,3 @@
-This repository contains a complete simulation pipeline for modeling the
-spread of misinformation across synthetic social networks. The project
-implements agent-based diffusion models, tipping-point estimation using a
-logistic regression framework, clustering analysis, and full writeup +
-presentation materials.
-
 ---
 
 ## 🔍 Motivation
