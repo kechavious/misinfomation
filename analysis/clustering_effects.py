@@ -4,12 +4,14 @@ from analysis.fit_logistic import fit_logistic
 
 def clustering_vs_tipping(G, p_values, runs=20, sim_func=None):
     """
-    Compute clustering coefficient and tipping point p_t.
+    Compute:
+        - average clustering coefficient
+        - tipping point from logistic fit
 
     Returns:
-        clustering (float)
-        tipping_point (float)
+        (clustering_coefficient, tipping_point)
     """
+
     clustering = nx.average_clustering(G)
 
     curve = sweep_probabilities(G, p_values, runs, sim_func=sim_func)
@@ -19,3 +21,4 @@ def clustering_vs_tipping(G, p_values, runs=20, sim_func=None):
     _, p0 = fit_logistic(p_list, adoption_list)
 
     return clustering, p0
+
