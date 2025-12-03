@@ -27,20 +27,20 @@ different network structures influence it?**
 We study two classic network topologies:
 
 #### **Erdős–Rényi (ER) Random Network**
+
 $$
-\[
 G(n, p_e)
-\]
 $$
+
 
 Represents decentralized, homogeneous online communities.
 
 #### **Barabási–Albert (BA) Scale-Free Network**
+
 $$
-\[
 P(k) \sim k^{-3}
-\]
 $$
+
 
 Represents influencer-driven platforms like Twitter.
 
@@ -100,10 +100,9 @@ $$
 Inflection point:
 
 $$
-\[
-p_0 = \arg\max \left(\frac{dA}{dp}\right)
-\]
+p_0 = \arg\max \left( \frac{dA}{dp} \right )
 $$
+
 
 ---
 
