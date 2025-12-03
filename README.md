@@ -87,10 +87,10 @@ $$
 Adoption curve is modeled using:
 
 $$
-\[
-A(p)=\frac{1}{1+e^{-\alpha(p - p_0)}}
-\]
+A(p) = \frac{1}{1 + e^{-\alpha(p - p_0)}}
 $$
+
+
 
 Where:
 
