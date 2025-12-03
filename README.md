@@ -53,13 +53,13 @@ Each node reshares misinformation with probability \( p \) once exposed.
 State update:
 
 $$
-\[
-X_i(t+1)=
-\begin{cases}
-1 & \text{if node } i \text{ is exposed and reshared with probability } p \\
-0 & \text{otherwise}
-\end{cases}
-\]
+X_i(t+1) =
+\left\{
+\begin{array}{ll}
+1, & \text{if node } i \text{ is exposed and reshared with probability } p \\
+0, & \text{otherwise}
+\end{array}
+\right.
 $$
 
 Adoption rate:
