@@ -62,6 +62,7 @@ X_i(t+1) =
 \right.
 $$
 
+
 Adoption rate:
 
 $$
@@ -271,7 +272,7 @@ Computer Science • Mathematics • Business Studies
 ## 📄 License
 
 MIT License
-This project was developed as part of coursework at New York University.
+This project was developed as part of coursework at New York University (NYU).
 NYU does not claim ownership or endorsement of this software.
 
 
