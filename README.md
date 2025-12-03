@@ -51,6 +51,7 @@ Represents influencer-driven platforms like Twitter.
 Each node reshares misinformation with probability \( p \) once exposed.
 
 State update:
+
 $$
 \[
 X_i(t+1)=
@@ -62,6 +63,7 @@ X_i(t+1)=
 $$
 
 Adoption rate:
+
 $$
 \[
 A(p)=\frac{\text{number of nodes reshared}}{n}
