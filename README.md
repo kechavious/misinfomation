@@ -27,16 +27,20 @@ different network structures influence it?**
 We study two classic network topologies:
 
 #### **Erdős–Rényi (ER) Random Network**
+$
 \[
 G(n, p_e)
 \]
+$
 
 Represents decentralized, homogeneous online communities.
 
 #### **Barabási–Albert (BA) Scale-Free Network**
+$
 \[
 P(k) \sim k^{-3}
 \]
+$
 
 Represents influencer-driven platforms like Twitter.
 
@@ -47,6 +51,7 @@ Represents influencer-driven platforms like Twitter.
 Each node reshares misinformation with probability \( p \) once exposed.
 
 State update:
+$
 \[
 X_i(t+1)=
 \begin{cases}
@@ -54,49 +59,57 @@ X_i(t+1)=
 0 & \text{otherwise}
 \end{cases}
 \]
+$
 
 Adoption rate:
+$
 \[
 A(p)=\frac{\text{number of nodes reshared}}{n}
 \]
+$
 
 ---
 
 ### **3. Tipping Point Definition**
 
 We define the empirical tipping point as:
-
+$
 \[
 p_t = \min \{ p \mid A(p) \ge 0.8 \text{ within 10 rounds} \}
 \]
-
+$
 ---
 
 ### **4. Logistic Model Fitting**
 
 Adoption curve is modeled using:
-
+$
 \[
 A(p)=\frac{1}{1+e^{-\alpha(p - p_0)}}
 \]
-
+$
 Where:
+$
 - \( \alpha \): diffusion steepness  
 - \( p_0 \): inflection point → estimated tipping point  
-
+$
 Inflection point:
+$
 \[
 p_0 = \arg\max \left(\frac{dA}{dp}\right)
 \]
+$
 
 ---
 
 ### **5. Clustering Analysis**
 
 Clustering coefficient:
+$
 \[
 C = \frac{3 \times \text{number of triangles}}{\text{number of triples}}
 \]
+$
 
 Higher clustering → delayed tipping point.
 
