@@ -27,9 +27,11 @@ different network structures influence it?**
 We study two classic network topologies:
 
 #### **Erdős–Rényi (ER) Random Network**
+$$
 \[
 G(n, p_e)
 \]
+$$
 
 Represents decentralized, homogeneous online communities.
 
