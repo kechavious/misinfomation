@@ -65,9 +65,7 @@ $$
 Adoption rate:
 
 $$
-\[
 A(p)=\frac{\text{number of nodes reshared}}{n}
-\]
 $$
 
 ---
