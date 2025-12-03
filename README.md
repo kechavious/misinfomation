@@ -75,11 +75,11 @@ $$
 ### **3. Tipping Point Definition**
 
 We define the empirical tipping point as:
+
 $$
-\[
-p_t = \min \{ p \mid A(p) \ge 0.8 \text{ within 10 rounds} \}
-\]
+p_t = \min \{ p \mid A(p) \ge 0.8 \}
 $$
+
 ---
 
 ### **4. Logistic Model Fitting**
@@ -89,8 +89,6 @@ Adoption curve is modeled using:
 $$
 A(p) = \frac{1}{1 + e^{-\alpha(p - p_0)}}
 $$
-
-
 
 Where:
 
@@ -114,9 +112,7 @@ $$
 Clustering coefficient:
 
 $$
-\[
-C = \frac{3 \times \text{number of triangles}}{\text{number of triples}}
-\]
+C = \frac{3 \times \text{triangles}}{\text{connected triples}}
 $$
 
 Higher clustering → delayed tipping point.
