@@ -83,17 +83,22 @@ $$
 ### **4. Logistic Model Fitting**
 
 Adoption curve is modeled using:
+
 $$
 \[
 A(p)=\frac{1}{1+e^{-\alpha(p - p_0)}}
 \]
 $$
+
 Where:
+
 $$
 - \( \alpha \): diffusion steepness  
 - \( p_0 \): inflection point → estimated tipping point  
 $$
+
 Inflection point:
+
 $$
 \[
 p_0 = \arg\max \left(\frac{dA}{dp}\right)
@@ -105,6 +110,7 @@ $$
 ### **5. Clustering Analysis**
 
 Clustering coefficient:
+
 $$
 \[
 C = \frac{3 \times \text{number of triangles}}{\text{number of triples}}
