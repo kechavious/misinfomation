@@ -259,8 +259,10 @@ presentation/slides_notes.md
 ## ✨ Author
 
 **Gordon Zou**
-
+```
 New York University
+```
+
 Computer Science • Mathematics • Web Application
 
 ---
