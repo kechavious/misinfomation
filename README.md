@@ -91,9 +91,12 @@ $$
 Where:
 
 $$
-- \( \alpha \): diffusion steepness  
-- \( p_0 \): inflection point → estimated tipping point  
+\begin{aligned}
+\alpha &: \text{ diffusion steepness} \\
+p_0 &: \text{ inflection point (estimated tipping point)}
+\end{aligned}
 $$
+
 
 Inflection point:
 
