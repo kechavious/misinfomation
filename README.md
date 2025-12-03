@@ -260,7 +260,7 @@ presentation/slides_notes.md
 
 **Gordon Zou**
 New York University
-Computer Science • Mathematics • Business Studies
+Computer Science • Mathematics • Web Application
 
 ---
 
