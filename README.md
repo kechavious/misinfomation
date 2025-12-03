@@ -263,8 +263,6 @@ presentation/slides_notes.md
 New York University
 ```
 
-Computer Science • Mathematics • Web Application
-
 ---
 
 ## 📄 License
