@@ -259,6 +259,7 @@ presentation/slides_notes.md
 ## ✨ Author
 
 **Gordon Zou**
+
 New York University
 Computer Science • Mathematics • Web Application
 
@@ -267,6 +268,7 @@ Computer Science • Mathematics • Web Application
 ## 📄 License
 
 MIT License
+
 This project was developed as part of coursework at New York University (NYU).
 NYU does not claim ownership or endorsement of this software.
 
