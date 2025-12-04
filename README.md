@@ -137,9 +137,6 @@ misinformation_spread_sim/
 │   ├── compute_metrics.py
 │   └── clustering_analysis.py
 │
-├── results/
-│   └── README.md
-│
 ├── writeup/
 │   ├── paper.md
 │   └── paper.pdf
