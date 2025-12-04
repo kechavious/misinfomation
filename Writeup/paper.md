@@ -67,13 +67,12 @@ Each node has a retransmission probability \( p \), representing how likely it i
 At each timestep:
 
 $$
-X_i(t+1) =
-{
-\begin{array}{ll}
-1, & \text{if node } i \text{ is exposed and reshares with probability } p \\
-0, & \text{otherwise}
-\end{array}
 
+X_i(t+1) =
+\begin{cases}
+1 & \text{if exposed and reshared with probability } p \\
+0 & \text{otherwise}
+\end{cases}
 $$
 
 Propagation continues for **10 rounds**, after which the final adoption rate \( A(p) \) is measured.
