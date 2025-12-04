@@ -124,30 +124,39 @@ Higher clustering → delayed tipping point.
 ```
 
 misinformation_spread_sim/
-├── data/
-│   └── README.md
 │
-├── simulation/
-│   ├── build_networks.py
-│   ├── run_diffusion.py
-│   └── utils.py
+├── data/                           # (Optional) External datasets / configuration files
+│   └── README.md                   # Description of data sources
 │
-├── analysis/
-│   ├── fit_logistic.py
-│   ├── compute_metrics.py
-│   └── clustering_analysis.py
+├── simulation/                     # Core simulation engine
+│   ├── build_networks.py           # ER / BA network generation functions
+│   ├── run_diffusion.py            # Agent-based diffusion simulation
+│   └── utils.py                    # Sweep functions, random seed control, helpers
 │
-├── writeup/
-│   ├── paper.md
-│   └── paper.pdf
+├── analysis/                       # Statistical analysis & modeling
+│   ├── fit_logistic.py             # Logistic regression for tipping point estimation
+│   ├── compute_metrics.py          # Adoption curve computation, derivatives, metrics
+│   └── clustering_analysis.py      # Clustering coefficient → tipping point relationship
 │
-├── presentation/
-│   ├── slides.pptx
-│   └── slides_notes.md
+├── notebooks/                      # Reproducible research notebooks
+│   └── misinformation_analysis.ipynb   # Full experiment workflow (ER, BA, logistic fit, clustering)
 │
-├── requirements.txt
-├── README.md
-└── LICENSE
+├── results/                        # Saved numerical outputs & generated figures
+│   ├── csv/                        # Adoption curves, tipping points, clustering results
+│   └── plots/                      # PNG visualizations for experiments
+│
+├── writeup/                        # Academic paper version
+│   ├── paper.md                    # Markdown draft of the research paper
+│   └── paper.pdf                   # Final PDF formatted paper
+│
+├── presentation/                   # Final presentation materials
+│   ├── slides.pptx                 # Full 10–12 minute presentation
+│   └── slides_notes.md             # Speaker notes for live talk
+│
+├── requirements.txt                # Python dependencies for reproducibility
+├── README.md                       # Project overview, setup, results summary
+└── LICENSE                         # MIT license (or chosen open-source license)
+
 
 ````
 
