@@ -67,7 +67,6 @@ Each node has a retransmission probability \( p \), representing how likely it i
 At each timestep:
 
 $$
-
 X_i(t+1) =
 \begin{cases}
 1 & \text{if exposed and reshared with probability } p \\
