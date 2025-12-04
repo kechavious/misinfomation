@@ -68,12 +68,12 @@ At each timestep:
 
 $$
 X_i(t+1) =
-\left\{
+{
 \begin{array}{ll}
 1, & \text{if node } i \text{ is exposed and reshares with probability } p \\
 0, & \text{otherwise}
 \end{array}
-\right.
+
 $$
 
 Propagation continues for **10 rounds**, after which the final adoption rate \( A(p) \) is measured.
