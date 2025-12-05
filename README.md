@@ -185,7 +185,7 @@ pip install -r requirements.txt
 
 ```python
 from simulation.build_networks import build_er_network
-G = build_er_network(n=2000, p_edge=0.01)
+G = build_er_network(n=10000, p_edge=0.01)
 
 ```
 
