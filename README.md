@@ -255,11 +255,10 @@ presentation/slides_notes.md
 
 ## 📚 References
 
-* Watts, D. J. (2002). *A simple model of global cascades on random networks.* PNAS.
-* Centola, D. (2010). *The spread of behavior in online networks.* Science.
-* Daley & Kendall (1965). *Epidemics and Rumours.* Nature.
-* FraLotito (2021). *FakeNews Simulator (GitHub).*
-* Kymry et al. (2021). *Fake-News-Network-Modeling (GitHub).*
+* A Simple Model of Global Cascades on Random Networks — D. J. Watts (2002): https://www.pnas.org/doi/10.1073/pnas.082090499 (PNAS)
+* The Spread of Behavior in an Online Social Network Experiment — D. Centola (2010): https://www.science.org/doi/10.1126/science.1185231 (use your institution or library to access full-text if paywalled) 
+* FakeNews Simulator (GitHub): https://github.com/FraLotito/fakenews_simulator
+* Fake‑News‑Network‑Modeling (GitHub): https://github.com/kymry/Fake-News-Network-Modeling
 
 ---
 
