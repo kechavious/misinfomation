@@ -167,7 +167,7 @@ misinformation_spread_sim/
 Clone the repository:
 
 ```bash
-git clone https://github.com/<your-username>/misinformation_spread_sim.git
+git clone https://github.com/kechavious/misinformation_spread_sim.git
 cd misinformation_spread_sim
 ````
 
