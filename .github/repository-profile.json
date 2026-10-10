@@ -1,0 +1,13 @@
+{
+  "description": "Reproducible simulations of information diffusion on random, scale-free, and small-world networks, with seeded experiments, uncertainty analysis, and a research report.",
+  "topics": [
+    "misinformation",
+    "network-science",
+    "diffusion",
+    "simulation",
+    "reproducible-research",
+    "python",
+    "networkx",
+    "small-world-networks"
+  ]
+}
