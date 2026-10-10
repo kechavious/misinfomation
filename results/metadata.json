@@ -1,0 +1,29 @@
+{
+  "generated_at_utc": "2026-10-10T17:23:26.544035+00:00",
+  "model": "synchronous SI; per-edge probability; repeated attempts; one random source",
+  "parameters": {
+    "nodes": 800,
+    "runs": 30,
+    "graphs": 5,
+    "points": 21,
+    "rounds": 10,
+    "seed": 42,
+    "clustering": true
+  },
+  "uncertainty": "95% Student-t CI across graph-replicate mean adoption; clipped to [0,1]",
+  "threshold": "first sampled p with mean adoption >=0.8; empty CSV value if not reached",
+  "python": "3.12.14",
+  "packages": {
+    "networkx": "3.7",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
+    "matplotlib": "3.11.2",
+    "pandas": "3.0.6"
+  },
+  "csv_sha256": {
+    "csv/adoption_curves.csv": "dfece9df6bfb56256263dfb1215f0bf2c24d3f826b4e0f282e675e32204feefe",
+    "csv/network_properties.csv": "af2cb20b5374d14c38f78bdf15886c0936a377e066e17e8f82a6393df7c1de31",
+    "csv/summary.csv": "ddc2906badfa76c71c411c01d23de2823e06a5714388d63f2070b70e0e4b5958",
+    "csv/trials.csv": "cfa3448851f832847c9dbfe9e4f1bcade3751536f90e58a2cb83e86948d1d03f"
+  }
+}

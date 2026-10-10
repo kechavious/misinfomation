@@ -1,0 +1,8 @@
+network,threshold_80,logistic_midpoint,logistic_slope,fit_mse,fit_status,mean_clustering,mean_degree
+ER,0.2,0.1390191321,36.04642376,1.477554098e-05,fitted,0.01034055279,7.928
+BA,0.2,0.1109721672,36.3824574,9.136261854e-05,fitted,0.0414977256,7.96
+WS β=0,,,,,Sampled curve does not bracket 50% adoption; midpoint not reported,0.6428571429,8
+WS β=0.01,,,,,Sampled curve does not bracket 50% adoption; midpoint not reported,0.626153373,8
+WS β=0.1,0.35,0.2423919194,18.89066737,4.222071932e-05,fitted,0.4732925144,8
+WS β=0.5,0.2,0.1469123714,35.71947767,1.004571996e-05,fitted,0.08743093434,8
+WS β=1,0.2,0.1414885565,37.8371626,1.414534369e-05,fitted,0.009187953101,8

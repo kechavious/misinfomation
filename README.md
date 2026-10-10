@@ -1,283 +1,167 @@
----
+<div align="center">
 
-## 🔍 Motivation
+# Misinformation Diffusion
 
-Online misinformation spreads rapidly across social platforms such as
-Twitter, Reddit, TikTok, and Instagram. Understanding *when* false
-information becomes viral is essential for platform moderation, algorithm
-design, and public policy.
+### How does network structure shape the spread of information?
 
-This project investigates the **tipping point** — the critical
-resharing probability at which misinformation transitions from localized
-spread to global cascades.
+A reproducible Python study of diffusion on random, scale-free and small-world networks.
 
----
+[![Checks](https://github.com/kechavious/misinfomation/actions/workflows/checks.yml/badge.svg)](https://github.com/kechavious/misinfomation/actions/workflows/checks.yml)
+![Python](https://img.shields.io/badge/Python-3.12-2563eb)
+[![License: MIT](https://img.shields.io/badge/License-MIT-64748b.svg)](LICENSE)
 
-## 🧠 Research Question
+[Quick start](#quick-start) · [Results](#reference-results) · [Methodology](docs/methodology.md) · [Notebook](notebooks/misinformation_analysis.ipynb)
 
-**Does misinformation diffusion exhibit a nonlinear tipping point, and how do
-different network structures influence it?**
+</div>
 
----
+![ER and BA diffusion curves with uncertainty bands](results/plots/adoption_comparison.png)
 
-## 🧪 Methodology
+## Research question
 
-### **1. Network Generation**
+Can differences in network topology change the transmission probability needed
+for widespread adoption within a fixed time horizon?
 
-We study two classic network topologies:
+This project explores that question using synthetic networks and a discrete-time
+susceptible–infected (SI) model. It provides inspectable simulation code,
+independent graph replicates, uncertainty bands and per-trial records. It is a
+study of a simplified diffusion mechanism, not a detector or calibrated predictor
+of real-world misinformation.
 
-#### **Erdős–Rényi (ER) Random Network**
+## What the project demonstrates
 
-$$
-G(n, p_e)
-$$
+- **Network simulation:** approximately degree-matched Erdős–Rényi (ER) and
+  Barabási–Albert (BA) networks, plus a Watts–Strogatz (WS) rewiring comparison.
+- **Reproducible experiments:** deterministic seeds for every graph and trial,
+  a command-line runner and metadata with CSV integrity hashes.
+- **Statistical analysis:** graph-level uncertainty, descriptive logistic fits
+  and an explicit distinction between the fitted midpoint and 80% adoption.
+- **Engineering:** an installable Python package, a notebook using the shared
+  model, behavioral tests and automated GitHub Actions checks.
 
+## Quick start
 
-Represents decentralized, homogeneous online communities.
-
-#### **Barabási–Albert (BA) Scale-Free Network**
-
-$$
-P(k) \sim k^{-3}
-$$
-
-
-Represents influencer-driven platforms like Twitter.
-
----
-
-### **2. Diffusion Model (Agent-Based)**
-
-Each node reshares misinformation with probability \( p \) once exposed.
-
-State update:
-
-$$
-X_i(t+1) =
-\begin{cases}
-1 & \text{if exposed and reshared with probability } p \\
-0 & \text{otherwise}
-\end{cases}
-$$
-
-
-
-Adoption rate:
-
-$$
-A(p)=\frac{\text{number of nodes reshared}}{n}
-$$
-
----
-
-### **3. Tipping Point Definition**
-
-We define the empirical tipping point as:
-
-$$
-p_t = \min \{ p \mid A(p) \ge 0.8 \}
-$$
-
----
-
-### **4. Logistic Model Fitting**
-
-Adoption curve is modeled using:
-
-$$
-A(p) = \frac{1}{1 + e^{-\alpha(p - p_0)}}
-$$
-
-Where:
-
-$$
-\begin{aligned}
-\alpha &: \text{ diffusion steepness} \\
-p_0 &: \text{ inflection point (estimated tipping point)}
-\end{aligned}
-$$
-
-
-Inflection point:
-
-$$
-p_0 = \arg\max \left( \frac{dA}{dp} \right )
-$$
-
-
----
-
-### **5. Clustering Analysis**
-
-Clustering coefficient:
-
-$$
-C = \frac{3 \times \text{triangles}}{\text{connected triples}}
-$$
-
-Higher clustering → delayed tipping point.
-
----
-
-## 📁 Project Structure
-
-```
-
-misinformation_spread_sim/
-│
-├── data/                           # (Optional) External datasets / configuration files
-│   └── README.md                   # Description of data sources
-│
-├── simulation/                     # Core simulation engine
-│   ├── build_networks.py           # ER / BA network generation functions
-│   ├── run_diffusion.py            # Agent-based diffusion simulation
-│   └── utils.py                    # Sweep functions, random seed control, helpers
-│
-├── analysis/                       # Statistical analysis & modeling
-│   ├── fit_logistic.py             # Logistic regression for tipping point estimation
-│   ├── compute_metrics.py          # Adoption curve computation, derivatives, metrics
-│   └── clustering_analysis.py      # Clustering coefficient → tipping point relationship
-│
-├── notebooks/                      # Reproducible research notebooks
-│   └── misinformation_analysis.ipynb   # Full experiment workflow (ER, BA, logistic fit, clustering)
-│
-├── results/                        # Saved numerical outputs & generated figures
-│   ├── csv/                        # Adoption curves, tipping points, clustering results
-│   └── plots/                      # PNG visualizations for experiments
-│
-├── writeup/                        # Academic paper version
-│   ├── paper.md                    # Markdown draft of the research paper
-│   └── paper.pdf                   # Final PDF formatted paper
-│
-├── presentation/                   # Final presentation materials
-│   ├── slides.pptx                 # Full 10–12 minute presentation
-│   └── slides_notes.md             # Speaker notes for live talk
-│
-├── requirements.txt                # Python dependencies for reproducibility
-├── README.md                       # Project overview, setup, results summary
-└── LICENSE                         # MIT license (or chosen open-source license)
-
-
-````
-
----
-
-## ⚙️ Installation
-
-Clone the repository:
+Python **3.12** is the tested runtime. From the repository root:
 
 ```bash
-git clone https://github.com/kechavious/misinformation_spread_sim.git
-cd misinformation_spread_sim
-````
+git clone https://github.com/kechavious/misinfomation.git
+cd misinfomation
+python3 -m venv .venv
+source .venv/bin/activate
+python -m pip install -r requirements.txt
+python -m pip install --no-deps -e .
+```
 
-Install dependencies:
+Run a small experiment first:
 
 ```bash
-pip install -r requirements.txt
+misinformation-study --nodes 60 --runs 3 --graphs 2 --points 5 \
+  --clustering --output /tmp/diffusion-smoke
 ```
 
----
+Reproduce the published reference results:
 
-## ▶️ Running Simulations
-
-### **1. Generate a network**
-
-```python
-from simulation.build_networks import build_er_network
-G = build_er_network(n=10000, p_edge=0.01)
-
+```bash
+misinformation-study --clustering --output results
 ```
 
-### **2. Run diffusion**
+Run tests:
 
-```python
-from simulation.run_diffusion import simulate_diffusion
-rate = simulate_diffusion(G, p=0.15, num_rounds=10)
-print(rate)
+```bash
+python -m unittest discover -s tests -v
 ```
 
-### **3. Sweep probabilities**
+No credentials, downloaded datasets, external services or GPU are needed.
+See [reproduction instructions](docs/reproduction.md) for larger sweeps and
+notebook setup. On Windows, activate with `.venv\Scripts\activate` and choose a
+writable output directory instead of `/tmp`.
 
-```python
-from simulation.utils import sweep_probabilities
-curve = sweep_probabilities(G, [i/100 for i in range(1, 40)], runs=30, sim_func=simulate_diffusion)
+## Reference results
+
+The reference run uses **800 nodes**, **5 independent graphs** per configuration,
+**30 diffusion trials** per graph and probability, **21 probabilities**, **10
+rounds** and master seed **42**. Across seven configurations this produces
+**22,050 trial outcomes**. ER and BA have approximately matched mean degree 8.
+
+| Network | Fitted 50% midpoint | First sampled p reaching 80% | Mean clustering |
+| --- | ---: | ---: | ---: |
+| ER | 0.139 | 0.20 | 0.010 |
+| BA | 0.111 | 0.20 | 0.041 |
+
+BA has an earlier fitted midpoint in this experiment. Both topologies reach the
+80% criterion at `p=0.20` on the sampled grid. These summaries answer different
+questions; an earlier midpoint does not establish an earlier 80% threshold.
+The curves use pointwise 95% Student-t intervals across graph-replicate means.
+Five graph replicates provide a coarse uncertainty estimate.
+
+![Illustrative ER and BA network structures](results/plots/network_topologies.png)
+
+### A rewiring comparison
+
+![Watts–Strogatz rewiring and the finite-horizon adoption threshold](results/plots/clustering_experiment.png)
+
+The regular WS lattice (`β=0`) and lightly rewired setting (`β=0.01`) do not
+reach 80% mean adoption within ten rounds anywhere on the sampled probability
+grid. Other settings reach it at 0.35 (`β=0.1`) or 0.20 (`β=0.5, 1`). Rewiring
+changes clustering **and** path lengths, so this comparison does not isolate a
+causal effect of clustering.
+
+Download [summary statistics](results/csv/summary.csv),
+[all trial outcomes](results/csv/trials.csv) and
+[experiment metadata](results/metadata.json). See the
+[research note](docs/research-note.md) for interpretation.
+
+## Model in brief
+
+One random node starts adopted. In each round, adopted nodes independently
+attempt to transmit to susceptible neighbors with probability `p` per edge.
+Updates are synchronous; adoption is permanent and attempts repeat each round.
+We measure the adopted fraction after the configured horizon.
+
+The **empirical 80% threshold** is the first sampled probability with mean
+adoption at least 0.8. The **logistic midpoint** is the fitted probability at 50%
+adoption. It is a descriptive curve summary, not a replacement for the threshold.
+
+Read the [full methodology](docs/methodology.md) for assumptions, uncertainty,
+network parameters and limitations.
+
+## Project map
+
+```text
+analysis/              Experiment runner, logistic fitting and metrics
+simulations/           Seeded graph generation and one shared diffusion model
+tests/                 Behavioral and end-to-end replay checks
+notebooks/             Guided exploration of the model and reference results
+results/               Current CSVs, figures and experiment metadata
+docs/                  Methods, reproduction guide and research note
+  archive/             Original coursework, presentation and historical results
+.github/workflows/     Automated tests and CLI smoke experiment
 ```
 
-### **4. Fit logistic model**
+## Limitations and next steps
 
-```python
-from analysis.fit_logistic import fit_logistic
-alpha, p0 = fit_logistic(list(curve.keys()), list(curve.values()))
-print("Estimated tipping point:", p0)
-```
+Synthetic static networks, uniform transmission probability and permanent
+adoption simplify behavior. The model does not represent content truth,
+recommendation algorithms, recovery, moderation or user heterogeneity. The
+reference experiment does not establish universal platform behavior, a
+thermodynamic phase transition, or causal clustering effects.
 
-### **5. Clustering vs Tipping**
+Useful extensions include more graph replicates, finer probability grids,
+finite-horizon sensitivity, recovery dynamics and calibration against real
+observations. Each would require new experiments and explicit assumptions.
 
-```python
-from analysis.clustering_analysis import clustering_vs_tipping
-C, p_t = clustering_vs_tipping(G, [i/100 for i in range(1, 40)], sim_func=simulate_diffusion)
-print(C, p_t)
-```
+## Background and attribution
 
----
+Originally developed as coursework at New York University. The original paper,
+slides and notebook are retained in the [historical archive](docs/archive/README.md);
+they describe earlier implementations and are not the current results.
 
-## 📊 Results Summary
+Related literature motivates the topic; these works do not validate this model:
 
-* Misinformation diffusion is **nonlinear**, following an S-curve.
-* BA networks tip earlier due to high-degree hubs.
-* ER networks require higher resharing probability to cascade.
-* Logistic model accurately identifies tipping probability.
-* High clustering increases resistance to global spread.
+- Watts, D. J. (2002). *A simple model of global cascades on random networks.*
+  [PNAS](https://doi.org/10.1073/pnas.082090499).
+- Centola, D. (2010). *The spread of behavior in an online social network experiment.*
+  [Science](https://doi.org/10.1126/science.1185231).
+- Daley, D. J., & Kendall, D. G. (1965). *Epidemics and rumours.*
+  [Nature](https://doi.org/10.1038/2041118a0).
 
----
-
-## 📘 Academic Paper
-
-See:
-
-```
-writeup/paper.pdf
-```
-
----
-
-## 🎤 Presentation Slides
-
-See:
-
-```
-presentation/slides.pptx
-presentation/slides_notes.md
-```
-
----
-
-## 📚 References
-
-* A Simple Model of Global Cascades on Random Networks — D. J. Watts (2002): https://www.pnas.org/doi/10.1073/pnas.082090499 (PNAS)
-* The Spread of Behavior in an Online Social Network Experiment — D. Centola (2010): https://www.science.org/doi/10.1126/science.1185231 
-* FakeNews Simulator (GitHub): https://github.com/FraLotito/fakenews_simulator
-* Fake‑News‑Network‑Modeling (GitHub): https://github.com/kymry/Fake-News-Network-Modeling
-* Epidemics and Rumours — D.J.Daley & D.G.Kendall (1965): https://www.nature.com/articles/2041118a0
-
----
-
-## ✨ Author
-
-**Gordon Zou**
-```
-New York University
-```
-
----
-
-## 📄 License
-
-MIT License
-
-This project was developed as part of coursework at New York University (NYU).
-NYU does not claim ownership or endorsement of this software.
-
-
----
+MIT licensed. See [LICENSE](LICENSE). Contributions: [CONTRIBUTING.md](CONTRIBUTING.md).
