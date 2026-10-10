@@ -1,6 +1,6 @@
 ---
-title: "Network Topology and Finite-Horizon Information Diffusion"
-subtitle: "A Reproducible Simulation Study Motivated by Misinformation Spread"
+title: "Network Topology and Finite-Horizon Diffusion Dynamics"
+subtitle: "A Reproducible Computational Study of Random, Scale-Free, and Small-World Networks"
 author: "Gordon Zou"
 date: "2026-10-10"
 lang: en-US

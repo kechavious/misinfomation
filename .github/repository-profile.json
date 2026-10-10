@@ -1,5 +1,5 @@
 {
-  "description": "Reproducible simulations of information diffusion on random, scale-free, and small-world networks, with seeded experiments, uncertainty analysis, and a research report.",
+  "description": "Computational network-science research on topology-dependent, finite-horizon SI diffusion, with independent graph replication, uncertainty quantification, and reproducible experiments.",
   "topics": [
     "misinformation",
     "network-science",
@@ -8,6 +8,9 @@
     "reproducible-research",
     "python",
     "networkx",
-    "small-world-networks"
+    "small-world-networks",
+    "complex-networks",
+    "stochastic-processes",
+    "computational-social-science"
   ]
 }

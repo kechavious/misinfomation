@@ -5,7 +5,7 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "misinformation-diffusion"
 version = "1.1.0"
-description = "Reproducible information diffusion experiments on random, scale-free, and small-world networks"
+description = "Computational study of network topology and finite-horizon SI diffusion dynamics"
 readme = "README.md"
 requires-python = ">=3.12"
 license = "MIT"

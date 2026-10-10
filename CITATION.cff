@@ -1,6 +1,6 @@
 cff-version: 1.2.0
 message: "If you use this simulation code or reference artifacts, please cite this software and identify the experiment parameters. The accompanying report is an exploratory simulation study."
-title: "Misinformation Diffusion: Reproducible Network Simulation and Analysis"
+title: "Network Topology and Finite-Horizon Diffusion Dynamics"
 type: software
 authors:
   - family-names: "Zou"

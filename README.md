@@ -1,10 +1,12 @@
 <div align="center">
 
-# Misinformation Diffusion
+# Network Topology and Finite-Horizon Diffusion Dynamics
 
-### How does network structure shape the spread of information?
+### A Reproducible Computational Study of Random, Scale-Free, and Small-World Networks
 
-A reproducible Python study of diffusion on random, scale-free and small-world networks.
+A computational network-science study motivated by misinformation spread.
+
+**Stochastic simulation · Independent graph replication · Statistical uncertainty · Reproducible research**
 
 [![Checks](https://github.com/kechavious/misinfomation/actions/workflows/checks.yml/badge.svg)](https://github.com/kechavious/misinfomation/actions/workflows/checks.yml)
 ![Python](https://img.shields.io/badge/Python-3.12-2563eb)
