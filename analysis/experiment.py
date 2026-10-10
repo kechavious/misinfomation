@@ -133,7 +133,9 @@ def render(curves, summary, out, seed):
     ax.grid(alpha=0.15)
     ax.legend(loc='lower right', frameon=False)
     fig.savefig(out/'plots'/'adoption_comparison.png')
-    fig.savefig(out/'plots'/'adoption_comparison.svg')
+    svg = out/'plots'/'adoption_comparison.svg'
+    fig.savefig(svg)
+    svg.write_text('\n'.join(line.rstrip() for line in svg.read_text().splitlines())+'\n')
     plt.close(fig)
     fig, axes = plt.subplots(1, 2, figsize=(10, 4), layout='constrained')
     for ax, (name, color) in zip(axes, COLORS.items()):
