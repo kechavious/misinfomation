@@ -14,6 +14,7 @@ jobs:
       - run: python -m pip install -r requirements.txt
       - run: python -m pip install --no-deps -e .
       - run: python -m unittest discover -s tests -v
+      - run: python scripts/generate_paper.py --check
       - run: misinformation-study --nodes 60 --runs 3 --graphs 2 --points 5 --clustering --output /tmp/study-smoke
         env:
           MPLBACKEND: Agg

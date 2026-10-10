@@ -62,3 +62,10 @@ Its examples use fixed seeds and do not overwrite reference results.
 To replay an individual row, build the corresponding network with its recorded
 `graph_seed` and call `simulate_diffusion` with its `p`, `diffusion_seed` and the
 recorded horizon. See `docs/methodology.md` for network parameters.
+
+## Research report
+
+The current [paper](paper.md) and [PDF](paper.pdf) use the reference data above.
+Run `bash scripts/build_paper.sh` to rebuild both; see
+[report prerequisites](../reports/README.md). The report generator checks the
+reference CSV hashes, parameter set and trial counts before creating its tables.

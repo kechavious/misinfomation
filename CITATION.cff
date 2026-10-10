@@ -1,0 +1,16 @@
+cff-version: 1.2.0
+message: "If you use this simulation code or reference artifacts, please cite this software and identify the experiment parameters. The accompanying report is an exploratory simulation study."
+title: "Misinformation Diffusion: Reproducible Network Simulation and Analysis"
+type: software
+authors:
+  - family-names: "Zou"
+    given-names: "Gordon"
+version: 1.1.0
+date-released: 2026-10-10
+repository-code: "https://github.com/kechavious/misinfomation"
+url: "https://github.com/kechavious/misinfomation"
+license: MIT
+keywords:
+  - network science
+  - diffusion simulation
+  - reproducible research

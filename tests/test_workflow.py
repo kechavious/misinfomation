@@ -47,6 +47,11 @@ class DiffusionTests(unittest.TestCase):
         self.assertEqual(sweep_probabilities(G, [0,.2,1], seed=7),
                          sweep_probabilities(G, [0,.2,1], seed=7))
 
+    def test_regular_lattice_horizon_matches_geometry(self):
+        G = nx.watts_strogatz_graph(800, 8, 0, seed=42)
+        for source in [0, 399]:
+            self.assertEqual(simulate_diffusion(G, 1, num_rounds=10, source=source), 81/800)
+
     def test_invalid_inputs(self):
         for G, p, rounds in [(nx.Graph(), .2, 10), (nx.path_graph(2), -1, 10),
                              (nx.path_graph(2), 1.1, 10), (nx.path_graph(2), .2, -1),

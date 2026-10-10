@@ -10,7 +10,7 @@ A reproducible Python study of diffusion on random, scale-free and small-world n
 ![Python](https://img.shields.io/badge/Python-3.12-2563eb)
 [![License: MIT](https://img.shields.io/badge/License-MIT-64748b.svg)](LICENSE)
 
-[Quick start](#quick-start) · [Results](#reference-results) · [Methodology](docs/methodology.md) · [Notebook](notebooks/misinformation_analysis.ipynb)
+[Quick start](#quick-start) · [Results](#reference-results) · [Methodology](docs/methodology.md) · [Paper (PDF)](docs/paper.pdf) · [Notebook](notebooks/misinformation_analysis.ipynb)
 
 </div>
 
@@ -26,6 +26,13 @@ susceptible–infected (SI) model. It provides inspectable simulation code,
 independent graph replicates, uncertainty bands and per-trial records. It is a
 study of a simplified diffusion mechanism, not a detector or calibrated predictor
 of real-world misinformation.
+
+## Research report
+
+Read the [full paper](docs/paper.md) or download the [typeset PDF](docs/paper.pdf).
+The report explains the SI model, experimental design, observed results and
+limits of interpretation. Its tables are generated from verified result CSVs.
+See [report build instructions](reports/README.md) to reproduce it.
 
 ## What the project demonstrates
 
@@ -108,7 +115,7 @@ causal effect of clustering.
 Download [summary statistics](results/csv/summary.csv),
 [all trial outcomes](results/csv/trials.csv) and
 [experiment metadata](results/metadata.json). See the
-[research note](docs/research-note.md) for interpretation.
+[full paper](docs/paper.md) for interpretation.
 
 ## Model in brief
 
@@ -132,8 +139,9 @@ simulations/           Seeded graph generation and one shared diffusion model
 tests/                 Behavioral and end-to-end replay checks
 notebooks/             Guided exploration of the model and reference results
 results/               Current CSVs, figures and experiment metadata
-docs/                  Methods, reproduction guide and research note
-  archive/             Original coursework, presentation and historical results
+docs/                  Current paper (Markdown/PDF), methods and reproduction guide
+reports/               Paper template and build documentation
+scripts/               Verified paper generation and PDF build
 .github/workflows/     Automated tests and CLI smoke experiment
 ```
 
@@ -151,9 +159,10 @@ observations. Each would require new experiments and explicit assumptions.
 
 ## Background and attribution
 
-Originally developed as coursework at New York University. The original paper,
-slides and notebook are retained in the [historical archive](docs/archive/README.md);
-they describe earlier implementations and are not the current results.
+Originally developed as coursework at New York University. The current paper
+replaces the earlier writeup. Previous papers, slides and results remain
+available in [Git history](docs/history.md); the current project tree contains
+one published version of the study.
 
 Related literature motivates the topic; these works do not validate this model:
 
@@ -163,5 +172,7 @@ Related literature motivates the topic; these works do not validate this model:
   [Science](https://doi.org/10.1126/science.1185231).
 - Daley, D. J., & Kendall, D. G. (1965). *Epidemics and rumours.*
   [Nature](https://doi.org/10.1038/2041118a0).
+
+To cite the software, use [CITATION.cff](CITATION.cff) or GitHub's “Cite this repository” control. Include the experiment parameters when citing results.
 
 MIT licensed. See [LICENSE](LICENSE). Contributions: [CONTRIBUTING.md](CONTRIBUTING.md).
